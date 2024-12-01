@@ -1,11 +1,13 @@
 import { generateSlug } from '@/utils/generateSlug';
 import { getCategoryById } from '@/utils/getCategoryById';
+import { getLatestRecipes } from '@/utils/getLatestRecipes';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const LatestRecipes = ({ recipes }) => {
+const LatestRecipes = () => {
+	const recipes = getLatestRecipes();
 	return (
-		<section className="mb-16">
+		<section id="latest" className="mb-16">
 			<h2 className="text-3xl font-bold mb-8">Latest Recipes</h2>
 			<div className="grid md:grid-cols-4 gap-8">
 				{recipes.slice(0, 4).map((recipe) => (

@@ -1,9 +1,11 @@
 import { generateSlug } from '@/utils/generateSlug';
 import { getCategoryById } from '@/utils/getCategoryById';
+import { getPopularRecipes } from '@/utils/getPopularRecipes';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './ui/Button';
-const Banner = ({ recipe }) => {
+const Banner = () => {
+	const recipe = getPopularRecipes()[0];
 	const category = getCategoryById(recipe.category_id);
 	return (
 		<section className="mb-16 bg-orange-50">

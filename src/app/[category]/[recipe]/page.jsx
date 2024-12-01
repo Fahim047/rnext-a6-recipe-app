@@ -96,7 +96,7 @@ const RecipeDetails = () => {
 				<Image
 					src={require(`../../../assets/thumbs/${recipeDetails.thumbnail}`)}
 					alt="Cooking Image"
-					className="w-full h-[600px] object-cover mb-8 rounded-lg"
+					className="mx-auto max-w-[400px] h-[300px] object-cover mb-8 rounded-lg"
 					width={800}
 					height={400}
 				/>
@@ -110,7 +110,10 @@ const RecipeDetails = () => {
 					technique cup; Cover smoker soy sauce.
 				</p>
 			</article>
-			<Recommendation categoryId={recipeDetails.category_id} />
+			<Recommendation
+				categoryId={recipeDetails.category_id}
+				recommendationTitle={recipeDetails.title}
+			/>
 		</main>
 	);
 };

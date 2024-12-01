@@ -8,7 +8,7 @@ const PopularCategories = () => {
 		<section className="mb-16">
 			<div className="flex justify-between items-top">
 				<h2 className="text-3xl font-bold mb-8">Popular Categories</h2>
-				<Link href="/category" className="text-orange-500">
+				<Link href="/categories" className="text-orange-500">
 					View All
 				</Link>
 			</div>
@@ -16,7 +16,7 @@ const PopularCategories = () => {
 				{categories.slice(0, 6).map((category) => (
 					<Link
 						key={category.id}
-						href={`/category/${category.id}`}
+						href={`/categories/${category.id}`}
 						className="cursor-pointer text-center group"
 					>
 						<div className="overflow-hidden rounded-full mb-2 w-20 h-20 mx-auto">

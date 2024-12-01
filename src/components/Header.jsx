@@ -10,11 +10,11 @@ const navLinks = [
 	},
 	{
 		label: 'Categories',
-		href: '/category',
+		href: '/categories',
 	},
 	{
 		label: 'Latest Recipes',
-		href: '/recipes',
+		href: '/latest',
 	},
 ];
 const Header = () => {
