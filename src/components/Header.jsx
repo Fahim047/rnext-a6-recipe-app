@@ -10,7 +10,7 @@ const navLinks = [
 	},
 	{
 		label: 'Categories',
-		href: '/categories',
+		href: '/category',
 	},
 	{
 		label: 'Latest Recipes',
