@@ -1,5 +1,7 @@
+import { generateSlug } from '@/utils/generateSlug';
 import { getCategoryById } from '@/utils/getCategoryById';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const LatestRecipes = ({ recipes }) => {
 	return (
@@ -7,7 +9,12 @@ const LatestRecipes = ({ recipes }) => {
 			<h2 className="text-3xl font-bold mb-8">Latest Recipes</h2>
 			<div className="grid md:grid-cols-4 gap-8">
 				{recipes.slice(0, 4).map((recipe) => (
-					<div key={recipe.title}>
+					<Link
+						href={`/${getCategoryById(
+							recipe.category_id
+						).name.toLowerCase()}/${generateSlug(recipe.title)}`}
+						key={recipe.title}
+					>
 						<Image
 							src={require(`../assets/thumbs/${recipe.thumbnail}`)}
 							alt="Strawberry Cream"
@@ -19,7 +26,7 @@ const LatestRecipes = ({ recipes }) => {
 						<p className="text-gray-600">
 							{getCategoryById(recipe.category_id).name}
 						</p>
-					</div>
+					</Link>
 				))}
 			</div>
 		</section>

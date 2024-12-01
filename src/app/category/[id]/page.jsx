@@ -1,7 +1,9 @@
 'use client';
+import { generateSlug } from '@/utils/generateSlug';
 import { getCategoryById } from '@/utils/getCategoryById';
 import { getRecipesByCategoryId } from '@/utils/getRecipesByCategoryId';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 const CategoryDetails = () => {
@@ -28,7 +30,8 @@ const CategoryDetails = () => {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				{recipes.map((recipe) => (
-					<div
+					<Link
+						href={`/${category.name}/${generateSlug(recipe.title)}`}
 						key={recipe.title}
 						className="bg-white rounded-lg overflow-hidden shadow-md"
 					>
@@ -42,7 +45,7 @@ const CategoryDetails = () => {
 						<div className="p-4">
 							<h2 className="font-semibold text-lg mb-2">{recipe.title}</h2>
 						</div>
-					</div>
+					</Link>
 				))}
 			</div>
 		</main>

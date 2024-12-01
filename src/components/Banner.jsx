@@ -1,7 +1,10 @@
+import { generateSlug } from '@/utils/generateSlug';
+import { getCategoryById } from '@/utils/getCategoryById';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from './ui/Button';
 const Banner = ({ recipe }) => {
+	const category = getCategoryById(recipe.category_id);
 	return (
 		<section className="mb-16 bg-orange-50">
 			<div className="grid md:grid-cols-2 gap-8 items-center">
@@ -13,16 +16,13 @@ const Banner = ({ recipe }) => {
 					/>
 				</div>
 				<div>
-					<h1 className="text-4xl font-bold mb-4 text-black">
-						Decadent Tiramisu Delight
-					</h1>
-					<p className="text-gray-600 mb-4">
-						Indulge in the ultimate Italian dessert experience with our velvety
-						smooth tiramisu. Layers of coffee-soaked ladyfingers and creamy
-						mascarpone filling create a heavenly treat that&apos;s sure to
-						impress.
-					</p>
-					<Link href="/recipes">
+					<h1 className="text-4xl font-bold mb-4 text-black">{recipe.title}</h1>
+					<p className="text-gray-600 mb-4">{recipe.description}</p>
+					<Link
+						href={`/${category.name.toLowerCase()}/${generateSlug(
+							recipe.title
+						)}`}
+					>
 						<Button>View Recipe</Button>
 					</Link>
 				</div>
