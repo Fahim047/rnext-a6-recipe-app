@@ -102,7 +102,7 @@ const RecipeDetails = () => {
 				/>
 
 				<p className="mb-8">
-					Juicy meatballs brisket slammin' baked shoulder. Juicy smoker soy
+					Juicy meatballs brisket slammin&apos; baked shoulder. Juicy smoker soy
 					sauce burgers brisket. polenta mustard hunk greens. Wine technique
 					snack skewers chuck excess. Oil heat slowly. slices natural delicious,
 					set aside magic tbsp skillet, bay leaves brown centerpiece. fruit
