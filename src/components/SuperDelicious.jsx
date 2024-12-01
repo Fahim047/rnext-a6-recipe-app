@@ -3,7 +3,7 @@ import { getCategoryById } from '@/utils/getCategoryById';
 import { getPopularRecipes } from '@/utils/getPopularRecipes';
 import Image from 'next/image';
 import Link from 'next/link';
-import Star from './icons/Star';
+import Rating from './Rating';
 const SuperDelicious = () => {
 	const recipes = getPopularRecipes();
 	return (
@@ -24,11 +24,7 @@ const SuperDelicious = () => {
 						/>
 						<h3 className="text-xl font-semibold mb-2">{recipe.title}</h3>
 						<div className="flex items-center text-yellow-500 mb-2">
-							<Star />
-							<Star />
-							<Star />
-							<Star />
-							<Star />
+							<Rating rating={recipe.rating.average_rating} />
 						</div>
 						<p className="text-gray-600">{recipe.cooking_time}</p>
 					</Link>

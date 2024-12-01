@@ -20,10 +20,11 @@ Project Requirements: [Requirements](requirements.md)
 - Latest Recipes
 - Footer
 
-## Techonology
+## Technologies
 
 - Next JS 14
 - Tailwind CSS
 - JavScript
+- react-rating-stars-component (package)
 
 **A star🌟 will motivate me. Thank you.**
